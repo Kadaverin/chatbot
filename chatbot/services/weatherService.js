@@ -14,7 +14,8 @@ module.exports = {
     fetch(url).then(res => {
       res.json().then(data => {
         let forecast = data.forecast.forecastday[index]
-        callback(null, forecast.day.condition.text, forecast.day.avgtemp_c)
+        if( !forecast ) return callback(new Error('api error'));
+        callback(null, forecast.day.condition.text, forecast.day.avgtemp_c);
       })
     })
     .catch(e => {
