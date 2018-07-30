@@ -52,9 +52,7 @@ function emitChatData(socket){
   })
 }
 
-// {err, newMsg, io, socket}
 function handleSendChatMessage( { err, newMsg, io, socket }){
-    // console.log (this.arguments)
     if(!err) io.emit('new message', newMsg)
  }
 
@@ -79,23 +77,3 @@ function handleSendChatMessage( { err, newMsg, io, socket }){
     }
  })
     
-
-
-        // if( /@bot/.test(msg.text)){
-
-        //  chatbot.answerOn(msg.text , (answer) => {
-        //    setTimeout( () => {
-
-        //       socket.emit('new message' , {
-        //         senderNick : 'bot',
-        //         senderName : 'Bander',
-        //         text: answer,
-        //         receiverNick: msg.senderNick,
-        //         createdAt: new Date()
-        //       })
-
-        //    }, 500)
-
-        //   })
-        // }
-
